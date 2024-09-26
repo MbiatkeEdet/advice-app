@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
 
+import './App.css';
+import './index.css';
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 export default function App(){
 
@@ -17,12 +19,15 @@ export default function App(){
   }
 
   return (
-    <div>
+    <div className="p-6 text-2xl">
+      <Navbar />
       <h1>{advice}</h1>
-      <button onClick={getAdvice}>Get Advice</button>
-      <p>
-        You have read<strong>{count}</strong> pieces of advice
+      <p className="p-8 font-light text-2xl text-slate-600">Welcome,  click the button below to get your daily motivational quotes</p>
+      <button className="w-full py-2 px-4 border border-transparent rounded-md text-white bg-slate-700" onClick={getAdvice}>Get Quote</button>
+      <p className='mt-5 px-9'>
+        You have read<strong>{count}</strong> pieces of quote..
       </p>
+      <Footer />
     </div>
   );
 }
